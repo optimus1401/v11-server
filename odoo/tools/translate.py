@@ -34,7 +34,7 @@ _LOCALE2WIN32 = {
     'fr_FR': 'French_France',
     'fr_CH': 'French_France',
     'de_DE': 'German_Germany',
-
+    'es_ES': 'Spanish_Spain',
 }
 
 # These are not all english small words, just those that could potentially be isolated within views
@@ -566,7 +566,7 @@ class PoFile(object):
             u"msgid %s\n"
             u"msgstr %s\n\n"
         ) % (
-            quote(pycompat.text_type(source)), 
+            quote(pycompat.text_type(source)),
             quote(pycompat.text_type(trad))
         )
         self.buffer.write(msg)
@@ -823,7 +823,7 @@ def trans_generate(lang, modules, cr):
             constraints = getattr(cls, '_local_' + cons_type, [])
             for constraint in constraints:
                 push_constraint_msg(module, term_type, model._name, constraint[msg_pos])
-            
+
     cr.execute(query_models, query_param)
 
     for (_, model, module) in cr.fetchall():
