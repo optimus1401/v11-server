@@ -34,8 +34,10 @@ _LOCALE2WIN32 = {
     'fr_FR': 'French_France',
     'fr_CH': 'French_France',
     'de_DE': 'German_Germany',
+    #should find more specific locales for spanish countries,
+    #but better than nothing
     'es_ES': 'Spanish_Spain',
-}
+ }
 
 # These are not all english small words, just those that could potentially be isolated within views
 ENGLISH_SMALL_WORDS = set("as at by do go if in me no of ok on or to up us we".split())
@@ -566,7 +568,7 @@ class PoFile(object):
             u"msgid %s\n"
             u"msgstr %s\n\n"
         ) % (
-            quote(pycompat.text_type(source)),
+            quote(pycompat.text_type(source)), 
             quote(pycompat.text_type(trad))
         )
         self.buffer.write(msg)
@@ -617,7 +619,7 @@ def trans_export(lang, modules, buffer, format, cr):
                 tmpmoddir = join(tmpdir, mod, 'i18n')
                 os.makedirs(tmpmoddir)
                 pofilename = (lang if lang else mod) + ".po" + ('t' if not lang else '')
-                buf = open(join(tmpmoddir, pofilename), 'w')
+                buf = open(join(tmpmoddir, pofilename), 'wb')
                 _process('po', [mod], modrows, buf, lang)
                 buf.close()
 
@@ -823,7 +825,7 @@ def trans_generate(lang, modules, cr):
             constraints = getattr(cls, '_local_' + cons_type, [])
             for constraint in constraints:
                 push_constraint_msg(module, term_type, model._name, constraint[msg_pos])
-
+            
     cr.execute(query_models, query_param)
 
     for (_, model, module) in cr.fetchall():
