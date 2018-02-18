@@ -16,11 +16,11 @@ MyOdoo ist ein "Fork" von Odoo, einem Browser gestützten Open Source Projekt f�
 MyOdoo ist für den deutschsprachigen Raum optimiert. Deshalb werden nur die Sprachen Deutsch und Englisch unterstützt.
 Unsere **deutschen Sprachübersetzungen unterscheiden** sich in Details von den Standardpaketen, da diese aus unserer Sicht teilweise falsch, mißverständlich oder gar nicht übersetzt sind.
 
-Unser Fork wird regelmäßig mit dem Hauptodoo Fork abgeglichen.
+Unser Fork wird regelmäßig mit dem Haupt-Odoo Fork abgeglichen.
 
-`Aktuelle Buildversion: 180211`
+`Aktuelle Buildversion: 180218`
 
-`Letzer Abgleich: 11.02.2018`
+`Letzer Abgleich: 18.02.2018`
 
 Dieser Fork obliegt der <a href="https://de.wikipedia.org/wiki/GNU_Lesser_General_Public_License">GNU LESSER GENERAL PUBLIC LICENSE</a> wie das Ursprungssystem <a href="https://www.odoo.com">Odoo</a> selbst.
 
