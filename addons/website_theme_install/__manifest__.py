@@ -8,5 +8,5 @@
         'views/views.xml',
     ],
     'depends': ['website'],
-    'auto_install': True,
+    'auto_install': False,
 }
