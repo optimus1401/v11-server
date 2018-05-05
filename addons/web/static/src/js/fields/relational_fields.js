@@ -1293,10 +1293,7 @@ var FieldOne2Many = FieldX2Many.extend({
 
         var self = this;
         var id = ev.data.id;
-        var onSaved = function (record, hasChanged) {
-            if (!hasChanged) {
-                return;
-            }
+        var onSaved = function (record) {
             if (_.some(self.value.data, {id: record.id})) {
                 // the record already exists in the relation, so trigger an
                 // empty 'UPDATE' operation when the user clicks on 'Save' in
@@ -2277,6 +2274,21 @@ var FieldReference = FieldMany2One.extend({
      */
     start: function () {
         this.$('select').val(this.field.relation);
+        return this._super.apply(this, arguments);
+    },
+
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
+
+    /**
+     * @override
+     * @returns {jQuery}
+     */
+    getFocusableElement: function () {
+        if (this.mode === 'edit' && !this.field.relation) {
+            return this.$('select');
+        }
         return this._super.apply(this, arguments);
     },
 
